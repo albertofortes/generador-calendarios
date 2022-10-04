@@ -154,16 +154,6 @@ export const DatePickerWrapper = styled('div')(() => css`
   }
 `)
 
-const snackbarInRight = keyframes`
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-`
-
 const snackbarInLeft = keyframes`
   from {
     transform: translateX(-100%);
