@@ -81,7 +81,7 @@ export const PinnedObjectButton = styled('button')(() => css`
   display: block;
   z-index: 4;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: -1.2rem;
   right: 5%;
   cursor: pointer;
