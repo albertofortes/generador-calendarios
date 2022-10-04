@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import { useContext } from 'react'
 import CalendarsContext from '../context/CalendarsContext'
 import moment from 'moment'
@@ -24,7 +24,7 @@ export default function CalendarComponent() {
     return day - 1
   }
 
-  const createCalendar = (elemId, minDate, maxDate) => {
+  const createCalendar = useCallback((elemId, minDate, maxDate) => {
     const month = minDate.getMonth()
     const endMonth = maxDate.getMonth()
     const year = minDate.getFullYear()
@@ -64,11 +64,11 @@ export default function CalendarComponent() {
       table += '</tr></table>' // close the table
       document.getElementById(elemId).innerHTML += `<h2>${moment(currentDate-1).format('MMMM')} de ${moment(currentDate-1).format('YYYY')}</h2> ${table}`;
     }
-  }
+  }, [])
 
   useEffect(() => {
     createCalendar('calendars', minDate, maxDate)
-  }, [minDate, maxDate])
+  }, [minDate, maxDate, createCalendar])
 
   return (
     <div>
