@@ -39,7 +39,7 @@ export default function DatePickers() {
           />
       </DatePickerWrapper>
 
-      <h2>Mostrando {countMonths} meses desde <b>{moment(minDate).format('D MMMM YYYY')}</b> hasta <b>{moment(maxDate).format('D MMMM YYYY')}</b></h2>
+      <h2>Mostrando {countMonths+1} meses desde <b>{moment(minDate).format('D MMMM YYYY')}</b> hasta <b>{moment(maxDate).format('D MMMM YYYY')}</b></h2>
       
     </DatePickerBox>
   )
