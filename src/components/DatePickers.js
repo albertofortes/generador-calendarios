@@ -10,6 +10,7 @@ import 'moment/locale/es'
 
 export default function DatePickers() {
   const { minDate, maxDate, changeDatePicker } = useContext(CalendarsContext)
+  const countMonths = maxDate.getMonth() - minDate.getMonth() + (12 * (maxDate.getFullYear() - minDate.getFullYear()))
 
   moment().locale('es')
 
@@ -38,7 +39,7 @@ export default function DatePickers() {
           />
       </DatePickerWrapper>
 
-      <h2>Mostrando meses desde <b>{moment(minDate).format('D MMMM YYYY')}</b> hasta <b>{moment(maxDate).format('D MMMM YYYY')}</b></h2>
+      <h2>Mostrando {countMonths} meses desde <b>{moment(minDate).format('D MMMM YYYY')}</b> hasta <b>{moment(maxDate).format('D MMMM YYYY')}</b></h2>
       
     </DatePickerBox>
   )

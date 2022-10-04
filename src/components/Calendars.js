@@ -62,7 +62,7 @@ export default function CalendarComponent() {
       }
 
       table += '</tr></table>' // close the table
-      document.getElementById(elemId).innerHTML += `<h2>${moment(currentDate-1).format('MMMM')} de ${moment(currentDate-1).format('YYYY')}</h2> ${table}`;
+      document.getElementById(elemId).innerHTML += `<h2>${moment(currentDate-1).format('MMMM')} de ${moment(currentDate-1).format('YYYY')} <small>(mes ${i+1})</small></h2> ${table}`;
     }
   }, [])
 

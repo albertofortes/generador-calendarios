@@ -111,6 +111,12 @@ export const PinnedObjectButton = styled('button')(() => css`
 export const DatePickerBox = styled('div')(() => css`
   padding: 1rem;
   background: #eaf1fb;
+  box-shadow: 0 .24rem .24rem .24rem rgb(0 0 0 / 5%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
 
   @media print {
     display: none
