@@ -73,8 +73,8 @@ export default function CalendarComponent() {
   return (
     <div>
       <PinnedObjectButton onClick={e => setOpenPinnedObjects(!openPinnedObjects)}>Acciones</PinnedObjectButton>
-      {openPinnedObjects && <DatePickers />}
-      {openSnackbar && <CustomSnackbar {...getRootProps()}>La fecha de fin no puede ser menor que la fecha de inicio.</CustomSnackbar>}
+      {Boolean(openPinnedObjects) && <DatePickers />}
+      {Boolean(openSnackbar) && <CustomSnackbar {...getRootProps()}>La fecha de fin no puede ser menor que la fecha de inicio.</CustomSnackbar>}
       <CalendarsWrapper id="calendars" />
     </div>
   )
